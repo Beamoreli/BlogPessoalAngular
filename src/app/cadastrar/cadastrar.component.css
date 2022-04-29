@@ -36,7 +36,7 @@ color: rgb(232, 35, 35);
   -webkit-background-clip: text;
   padding-top: 20px;
   font-size: 50px;
-  animation: filling 4s ease forwards;
+  animation: filling 2s ease forwards;
   font-weight: bold;
 }
 @keyframes filling {

@@ -20,3 +20,25 @@ button{
   padding: 0.4rem 50px;
 
 }
+
+.texto{
+  background-image:  url(https://c.tenor.com/QRJknyzv2rAAAAAC/stars-universe.gif);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  padding-top: 20px;
+  font-size: 45px;
+  animation: filling 15s ease forwards;
+  font-weight: bold;
+}
+@keyframes filling {
+  from{
+    background-position: center 25%;
+  }
+  to {
+    background-position: center 50%;
+  }
+}
+
+.container-fluid{
+  background-color: rgba(222, 222, 222, 0.202);
+}
