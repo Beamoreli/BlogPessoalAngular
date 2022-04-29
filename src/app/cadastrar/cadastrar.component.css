@@ -1,7 +1,28 @@
 #imgBg{
-  background-image: url(https://st.depositphotos.com/1897095/1642/i/450/depositphotos_16428473-stock-photo-fog-and-pastel-gradient.jpg);
+  background-image: url(https://images.pexels.com/photos/2033997/pexels-photo-2033997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
+}
+
+.form-group{
+  padding: 0.2rem;
+}
+
+label{
+  padding: 0.3rem;
+}
+
+button{
+  margin: 1rem;
+  padding: 0.5rem 0.90rem;
+  color: white;
+}
+
+.cancel{
+background-color: rgb(221, 81, 81);
+}
+.cadas{
+  background-color: rgba(9, 42, 80, 0.876);
 }
