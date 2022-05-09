@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -6,7 +6,7 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav m-auto d-flex align-items-center">
     <li class="nav-item active">
-      <img src="{{foto}}" alt="Foto do Usuario" width="50" height="50" class="rounded-circle img-fluid">
+      <img [src]="foto" onerror="this.src = 'https://cdn-icons.flaticon.com/png/512/4717/premium/4717889.png?token=exp=1652057234~hmac=e34c9e2c128394f512ef98c224a7576c' " alt="imagem de perfil" class="rounded-circle img-fluid" width="50">
     </li>
     <li class="nav-item pl-3">
       <p class="m-2 font-weight-bold text-white fs-16">{{nome}}</p>
@@ -15,7 +15,7 @@
 <div>
   <ul class="navbar-nav ml-auto d-flex align-items-center">
     <li class="nav-item pl-3">
-      <a (click)="sair()" class="m-2 font-weight-bold text-white fs-16" href="">Sair<i class="fa fa-sign-out" aria-hidden="true"></i>
+      <a (click)="sair()" class="m-2 font-weight-bold text-white fs-16" href="">Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
       </a>
     </li>
   </ul>
