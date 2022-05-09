@@ -1,5 +1,9 @@
+.fonteUsuario{
+  font-size: 25pt;
+}
+
 .fs-16 {
-  font-size: 16pt;
+  font-size: 14pt;
 }
 
 a{
@@ -9,3 +13,4 @@ a{
 .bg{
   background-color: #740641c0;
 }
+
