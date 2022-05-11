@@ -37,6 +37,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/entrar']);
     }
 
+    this.authService.refreshToken();
     this.getAllTemas();
     this.getAllPostagens()
   }
@@ -56,9 +57,15 @@ export class InicioComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
+
     })
   }
 
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
+      this.usuario = resp
+    })
+  }
 
   publicar() {
     this.tema.id = this.idTema;
