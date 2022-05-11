@@ -16,14 +16,14 @@ export class PostagemService {
 
   getAllPostagens(): Observable<Postagem[]> {
     return this.http.get<Postagem[]>(
-      'https://beablogyz.herokuapp.com/postagens',
+      'http://localhost:8080/postagens',
       this.token
     );
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>(
-      'https://beablogyz.herokuapp.com/postagens',
+      'http://localhost:8080/postagens',
       postagem,
       this.token
     );
