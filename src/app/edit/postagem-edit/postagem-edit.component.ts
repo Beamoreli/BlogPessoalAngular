@@ -26,6 +26,8 @@ export class PostagemEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0,0)
+
     if (environment.token == '') {
       // alert('Sessão expirada, faça login para continuar')
       this.router.navigate(['/entrar']);
