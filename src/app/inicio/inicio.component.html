@@ -13,35 +13,38 @@
       </div>
 
       <div class="col-md-6">
-        <img src="https://i.pinimg.com/originals/60/86/58/608658b60f8ec379125a382f88ab1e59.gif" alt="imagem de fundo" width="350px" height="350px" class="img-fluid">
+        <img src="https://cdn.discordapp.com/attachments/971065406712320010/971470982038569000/Cat_astronaut-cuate.png" alt="imagem de fundo" width="350px" height="350px" class="img-fluid">
       </div>
     </div>
   </div>
 </div>
 
 <!-- fim do topo -->
-<!-- POSTAGENS -->
+
+<!-- !POSTAGENS -->
 <div class="container mb-5 mt-5"  id="postagens">
   <nav>
   <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
 
     <li class="nav-item" role="presentation">
         <a class="nav-link active text-secondary font-weight-bold" id="todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab"
-        aria-controls="todasPostagens" aria-selected="true">Todas as postagens</a>
+        aria-controls="todasPostagens-tab" aria-selected="true">Todas as postagens</a>
       </li>
 
       <li class="nav-item" role="presentation">
         <a (click)="findByIdUser()" class="nav-link text-secondary font-weight-bold" id="minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
-          aria-controls="minhasPostagens" aria-selected="false">Minhas postagens</a>
+          aria-controls="minhasPostagens-tab" aria-selected="false">Minhas postagens</a>
       </li>
 
       <li class="nav-item" role="presentation">
         <a class="nav-link text-secondary font-weight-bold" id="postagensTema-tab" data-toggle="tab" href="#postagensTema" role="tab"
-          aria-controls="postagensTema" aria-selected="false">Postagens por tema</a>
+          aria-controls="postagensTema-tab" aria-selected="false">Postagens por tema</a>
       </li>
     </ul>
   </nav>
 
+
+  <!-- !TODAS POSTAGENS -->
     <div class="tab-content mt-5" id="myTabContent">
 
       <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
@@ -61,12 +64,13 @@
           </div>
         </div>
       </div>
+      </div>
 
-
-
+<!-- !MINHAS POSTAGENS -->
       <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="minhasPostagens-tab">
+
         <div class="card-columns">
-        <div class="card text-center" *ngFor='let item of usuario.postagem'>
+        <div class="card text-center" *ngFor='let item of usuario.postagens'>
           <div class="card-body">
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <p class="card-text">Tema: {{item.tema.descricao}}.</p>
@@ -77,9 +81,11 @@
           </div>
         </div>
       </div>
+      </div>
+  <!-- !MINHAS POSTAGENS -->
 
 
-
+  <!-- ! POSTAGEM POR TEMA -->
       <div class="tab-pane fade" id="postagensTema" role="tabpanel" aria-labelledby="postagensTema-tab">
         <div class="card-columns" ngFor="let tema of listaTemas">
         <div class="card text-center" *ngFor='let item of tema.postagem'>
@@ -93,11 +99,11 @@
 
           </div>
         </div>
-      </div></div>
+      </div>
     </div>
   </div>
 
-  <!-- \POSTAGENS -->
+ <!-- !\POSTAGENS -->
 
 
 <!-- Modal -->
