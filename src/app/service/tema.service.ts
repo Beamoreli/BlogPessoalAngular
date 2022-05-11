@@ -15,7 +15,7 @@ export class TemaService {
   };
 
   getAllTema(): Observable<Tema[]> {
-    return this.http.get<Tema[]>('https://beablogyz.herokuapp.com/tema', this.token);
+    return this.http.get<Tema[]>(`https://beablogyz.herokuapp.com/tema`, this.token);
   }
 
   getByIdTema(id: number): Observable<Tema>{
@@ -23,11 +23,11 @@ export class TemaService {
   }
 
   postTema(tema: Tema): Observable<Tema> {
-    return this.http.post<Tema>('https://beablogyz.herokuapp.com/tema', tema, this.token);
+    return this.http.post<Tema>(`https://beablogyz.herokuapp.com/tema`, tema, this.token);
   }
 
   putTema(tema: Tema): Observable<Tema> {
-    return this.http.put<Tema>('https://beablogyz.herokuapp.com/tema', tema, this.token);
+    return this.http.put<Tema>(`https://beablogyz.herokuapp.com/tema`, tema, this.token);
   }
 
   deteleTema(id:number) {
