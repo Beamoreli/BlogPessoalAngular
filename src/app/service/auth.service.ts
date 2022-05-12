@@ -30,7 +30,7 @@ export class AuthService {
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(
-      'http://localhost:8080/usuarios/cadastrar',
+      `http://localhost:8080/usuarios/cadastrar`,
       usuario
     );
   }
@@ -50,4 +50,9 @@ export class AuthService {
     }
     return ok;
   }
+
+  atualizar(usuario: Usuario):Observable<Usuario>{
+    return this.http.put<Usuario>('http://localhost:8080/usuarios/atualizar',usuario,this.token)
+  }
+
 }
