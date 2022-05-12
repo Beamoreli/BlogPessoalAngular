@@ -6,11 +6,24 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav m-auto d-flex align-items-center">
     <li class="nav-item active">
-      <img [src]="foto"  alt="imagem de perfil" class="rounded-circle img-fluid" width="50">
-      <!-- onerror="this.src = 'https://cdn-icons.flaticon.com/png/512/4717/premium/4717889.png?token=exp=1652057234~hmac=e34c9e2c128394f512ef98c224a7576c' " -->
+      <img
+          [src]="foto"
+          onerror="this.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTonzitYe7kb9fz9q1ghupvjYeUMWgJ8i3fqA&usqp=CAU'"
+          alt="Foto do Usuario"
+          width="45px"
+          height="45px"
+          class="rounded-circle img-fluid"
+        />
     </li>
     <li class="nav-item pl-3">
-      <p class="m-2 font-weight-bold text-white fonteUsuario">{{nome}}</p>
+      <p class="m-2 font-weight-bold text-white fonteUsuario">Olá, {{nome}}</p>
+    </li>
+    <li class="nav-item pl-3">
+      <!-- <a [routerLink]="['/usuario-edit', id]"> -->
+        <p class="text-dark fs-16 m-0">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </p>
+      <!-- </a> -->
     </li>
   </ul>
 <div>
