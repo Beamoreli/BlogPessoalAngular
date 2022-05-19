@@ -16,28 +16,28 @@ export class PostagemService {
 
   getAllPostagens(): Observable<Postagem[]> {
     return this.http.get<Postagem[]>(
-      'http://localhost:8080/postagens',
+      'https://beamoreli.herokuapp.com/postagens',
       this.token
     );
   }
 
   getByIdPostagem(id: number): Observable<Postagem> {
     return this.http.get<Postagem>(
-      `http://localhost:8080/postagens/${id}`,
+      `https://beamoreli.herokuapp.com/postagens/${id}`,
       this.token
     );
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>(
-      'http://localhost:8080/postagens',
+      'https://beamoreli.herokuapp.com/postagens',
       postagem,
       this.token
     );
   }
   putPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.put<Postagem>(
-      'http://localhost:8080/postagens',
+      'https://beamoreli.herokuapp.com/postagens',
       postagem,
       this.token
     );
@@ -45,7 +45,7 @@ export class PostagemService {
 
   deletePostagem(id: number) {
     return this.http.delete(
-      `http://localhost:8080/postagens/${id}`,
+      `https://beamoreli.herokuapp.com/postagens/${id}`,
       this.token
     );
   }
