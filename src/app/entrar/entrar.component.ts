@@ -32,7 +32,7 @@ export class EntrarComponent implements OnInit {
       },
       error: (erro) => {
         if (erro.status == 401) {
-          this.alerta.showAlertInfo('Usuário ou senha estão incorretos!');
+          this.alerta.showAlertDanger('Usuário ou senha estão incorretos!');
         }
       },
     });

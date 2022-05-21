@@ -10,7 +10,7 @@ export class AlertaComponent implements OnInit {
 
 
   @Input() message: string
-  @Input() tipo: string = 'info'
+  @Input() type: string = 'info'
 
   constructor(
     public modal: BsModalRef
