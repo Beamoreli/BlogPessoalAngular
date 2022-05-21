@@ -28,6 +28,10 @@ export class PostagemService {
     );
   }
 
+  getByTituloPostagem(titulo: string): Observable<Postagem[]>{
+    return  this.http.get<Postagem[]>(`https://beamoreli.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>(
       'https://beamoreli.herokuapp.com/postagens',
@@ -49,4 +53,5 @@ export class PostagemService {
       this.token
     );
   }
+
 }

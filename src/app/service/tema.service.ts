@@ -22,6 +22,10 @@ export class TemaService {
     return this.http.get<Tema>(`https://beamoreli.herokuapp.com/tema/${id}`, this.token)
   }
 
+  getByNomeTema(nome: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://beamoreli.herokuapp.com/tema/nome/${nome}`, this.token)
+  }
+
   postTema(tema: Tema): Observable<Tema> {
     return this.http.post<Tema>(`https://beamoreli.herokuapp.com/tema`, tema, this.token);
   }
@@ -33,4 +37,6 @@ export class TemaService {
   deteleTema(id:number) {
     return this.http.delete(`https://beamoreli.herokuapp.com/tema/${id}`, this.token)
   }
+
+
 }

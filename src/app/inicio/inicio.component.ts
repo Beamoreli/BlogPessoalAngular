@@ -17,7 +17,9 @@ import { AuthService } from './../service/auth.service';
 })
 export class InicioComponent implements OnInit {
   postagem: Postagem = new Postagem();
-  listaPostagens: Postagem[]
+  listaPostagens: Postagem[];
+  tituloPost: string;
+  nomeTema: string;
 
   tema: Tema = new Tema();
   listaTemas: Tema[];
@@ -26,8 +28,8 @@ export class InicioComponent implements OnInit {
   usuario: Usuario = new Usuario();
   idUser = environment.id;
 
-  key = 'data'
-  reverse = true
+  key = 'data';
+  reverse = true;
 
   constructor(
     private router: Router,
@@ -35,11 +37,10 @@ export class InicioComponent implements OnInit {
     private temaService: TemaService,
     private authService: AuthService,
     private alerta: AlertasService
-
   ) {}
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0);
 
     if (environment.token == '') {
       // alert('Sua seção expirou, faça o login novamente')
@@ -48,7 +49,7 @@ export class InicioComponent implements OnInit {
 
     this.authService.refreshToken();
     this.getAllTemas();
-    this.getAllPostagens()
+    this.getAllPostagens();
   }
 
   getAllTemas() {
@@ -63,17 +64,16 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  getAllPostagens(){
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=>{
-      this.listaPostagens = resp
-
-    })
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp;
+    });
   }
 
-  findByIdUser(){
-    this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
-      this.usuario = resp
-    })
+  findByIdUser() {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario) => {
+      this.usuario = resp;
+    });
   }
 
   publicar() {
@@ -83,11 +83,37 @@ export class InicioComponent implements OnInit {
     this.usuario.id = this.idUser;
     this.postagem.usuario = this.usuario;
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+    this.postagemService
+      .postPostagem(this.postagem)
+      .subscribe((resp: Postagem) => {
         this.postagem = resp;
         this.alerta.showAlertSuccess('Postagem Realizada com sucesso!');
         this.postagem = new Postagem();
-        this.getAllPostagens()
+        this.getAllPostagens();
       });
+  }
+
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
+      this.getAllPostagens();
+    } else {
+      this.postagemService
+        .getByTituloPostagem(this.tituloPost)
+        .subscribe((resp: Postagem[]) => {
+          this.listaPostagens = resp;
+        });
+    }
+  }
+
+  findByNomeTema() {
+    if (this.nomeTema == '') {
+      this.getAllTemas();
+    } else {
+      this.temaService
+        .getByNomeTema(this.nomeTema)
+        .subscribe((resp: Tema[]) => {
+          this.listaTemas  = resp;
+        });
+    }
   }
 }
