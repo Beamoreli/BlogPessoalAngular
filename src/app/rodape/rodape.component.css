@@ -1,6 +1,10 @@
 a{
   text-decoration: none;
   cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+}
+h5, span{
+  font-family: 'Courier New', Courier, monospace;
 }
 
 ul.redes-sociais{

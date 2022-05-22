@@ -52,7 +52,16 @@ export class AuthService {
   }
 
   atualizar(usuario: Usuario):Observable<Usuario>{
-    return this.http.put<Usuario>('http://localhost:8080/usuarios/atualizar',usuario,this.token)
+    return this.http.put<Usuario>('https://beamoreli.herokuapp.com/usuarios/atualizar',usuario,this.token)
   }
+
+adm(){
+  let ok = false;
+
+  if (environment.tipo == 'adm') {
+    ok = true;
+  }
+  return ok;
+}
 
 }

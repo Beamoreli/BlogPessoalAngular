@@ -1,16 +1,26 @@
-.fonteUsuario{
-  font-size: 25pt;
+.fonteUsuario {
+  font-size: 22pt;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
 }
 
 .fs-16 {
-  font-size: 14pt;
+  font-size: 17pt;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
 }
 
-a{
+a {
   cursor: pointer;
   text-decoration: none;
 }
-.bg{
+
+.bg {
   background-color: #740641c0;
 }
 
+.fa-pencil,.fa-sign-out {
+  color: #FBCE4E;
+  font-size: 15pt;
+}
