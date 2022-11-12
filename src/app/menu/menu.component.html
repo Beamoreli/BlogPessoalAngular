@@ -1,39 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav m-auto d-flex align-items-center">
-    <li class="nav-item active">
-      <img
-          [src]="foto"
-          onerror="this.src = 'https://cdn-icons-png.flaticon.com/512/1177/1177568.png'"
-          alt="Foto do Usuario"
-          width="45px"
-          height="45px"
-          class="rounded-circle img-fluid"
-        />
-    </li>
-    <li class="nav-item pl-3">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav m-auto d-flex align-items-center">
+      <li class="nav-item active">
+        <img [src]="foto" onerror="this.src = 'https://cdn-icons-png.flaticon.com/512/5987/5987420.png'"
+          alt="Foto do Usuario" width="45px" height="45px" class="rounded-circle img-fluid" />
+      </li>
+      <li class="nav-item pl-3">
 
-      <p class="m-2  text-white fonteUsuario">Olá, {{nome}}</p>
-    </li>
-    <li class="nav-item pl-3">
-    <a [routerLink]="['/user-edit', id]">
-        <p class="text-dark fs-16 m-0">
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        </p>
-      </a>
-    </li>
-  </ul>
-<div>
-  <ul class="navbar-nav ml-auto d-flex align-items-center">
-    <li class="nav-item pl-3">
-      <a (click)="sair()" class="m-2 text-white fs-16" href="">Sair <i class="fa fa-sign-out" aria-hidden="true"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-</div>
+        <p class="m-2  text-white fonteUsuario">Olá, {{nome}}</p>
+      </li>
+      <li class="nav-item pl-3">
+        <a [routerLink]="['/user-edit', id]">
+          <p class="text-dark fs-16 m-0">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </p>
+        </a>
+      </li>
+    </ul>
+    <div>
+      <ul class="navbar-nav ml-auto d-flex align-items-center">
+        <li class="nav-item pl-3">
+          <a (click)="sair()" class="m-2 text-white fs-16" href="">Sair <i class="fa fa-sign-out"
+              aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
